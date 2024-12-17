@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function AppHeader() {
     return (
         <header>
@@ -5,9 +7,9 @@ export default function AppHeader() {
                 <div>
                     <i className="bi bi-layout-sidebar"></i>
                 </div>
-                <a className="nav-link" aria-disabled="false" href="#">Home</a>
-                <a className="nav-link" aria-disabled="false" href="#">Viaggi</a>
-                <a className="nav-link" aria-disabled="false" href="#">Partecipanti</a>
+                <NavLink className="nav-link" aria-disabled="false" to="/">Home</NavLink>
+                <NavLink className="nav-link" aria-disabled="false" to="/trips">Viaggi</NavLink>
+                <NavLink className="nav-link" aria-disabled="false" to="/clients">Partecipanti</NavLink>
             </div>
         </header>
     )
