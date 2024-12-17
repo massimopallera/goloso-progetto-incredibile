@@ -6,26 +6,24 @@
 
 /* scrollbar */
 .table {
-
   overflow-y: auto;
-
 }
 
+/* Larghezza della scrollbar */
 .table::-webkit-scrollbar {
   width: 7px;
-  /* Larghezza della scrollbar */
 }
 
+/* Colore della scrollbar */
 .table::-webkit-scrollbar-thumb {
   background-color: #03ff81;
-  /* Colore della scrollbar */
   border-radius: 10px;
-  /* Arrotondamento */
+
 }
 
+/* Sfondo del tracciato */
 .table::-webkit-scrollbar-track {
   background-color: #343a40;
-  /* Sfondo del tracciato */
   border-radius: 10px;
 }
 
@@ -49,4 +47,11 @@
   background-color: rgb(0, 128, 255);
   padding: 15px;
   border-radius: 5px;
+}
+
+/* Stile per il NavLink attivo */
+.nav-link.active {
+  border-bottom: 2px solid rgb(0, 128, 255);
+  color: white;
+  text-decoration: none;
 }
