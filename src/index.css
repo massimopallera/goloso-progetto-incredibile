@@ -7,3 +7,17 @@
     flex-wrap: wrap;
 
 }
+
+.main {
+    min-height: calc(100vh - 160px);
+}
+
+header {
+    height: 80px;
+}
+
+.close-button:onclick {
+    #overlay {
+        display: none;
+    }
+}

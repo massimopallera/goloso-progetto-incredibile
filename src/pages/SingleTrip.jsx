@@ -18,6 +18,7 @@ export default function SingleTrip() {
     // const navigate = useNavigate()
 
 
+
     const [client, setClient] = useState(initial)
 
     function handleOverlay(id) {
@@ -29,6 +30,13 @@ export default function SingleTrip() {
 
         setClient(findClient)
 
+    }
+
+
+    function closeOverlay() {
+
+        const overlayEl = document.querySelector('#overlay')
+        overlayEl.classList.add('d-none')
     }
 
     return (
@@ -53,9 +61,10 @@ export default function SingleTrip() {
                         <h2> <strong>{client.nome} </strong> <strong>{client.cognome}</strong></h2>
                         <h3>Email: {client.email}</h3>
                         <h3>N° Telefono: {client.numeroTelefono}</h3>
+                        <button onClick={closeOverlay} className="btn btn-dark ">Indietro</button>
                     </div>
                 </div>
-            </div>
+            </div >
 
             <div className="container">
                 <div className="row row-cols-1 row-cols-sm-3 row-cols-md-5 flex-wrap gap-3 justify-content-center m-3">
