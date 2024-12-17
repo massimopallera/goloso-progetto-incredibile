@@ -1,3 +1,5 @@
+import CardTour from "../components/CardTour.jsx";
+
 export default function HomePage() {
     return (
         <section className='container-lg mt-3 '>
@@ -16,20 +18,7 @@ export default function HomePage() {
                 </div>
 
                 {/* card per i viaggi */}
-                <div className="container table d-flex flex-column gap-2 ">
-
-                    <div className="card-lg text-left ">
-                        <div className="card-body rounded-4 ">
-                            <div><strong>Dubai</strong></div>
-                            <div>YYYY/MM/DD</div>
-                            <button
-                                className='btn btn-primary btn-sm bg-primary rounded-4 text-white'>
-                                <strong>Show Travel</strong>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
+                <CardTour />
 
             </div>
         </section>
