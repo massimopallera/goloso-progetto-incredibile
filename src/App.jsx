@@ -23,6 +23,28 @@ function App() {
         </Routes>
       </BrowserRouter>
 
+      {/* search bar */}
+      <div className="searchBar">
+        <form className="d-flex mb-3" role="search">
+          <input
+            className="form-control rounded-4"
+            type="search"
+            placeholder="Cerca Il Viaggio"
+            aria-label="Search"
+          />
+        </form>
+      </div>
+
+      {/* card per i viaggi */}
+
+
+    </div >
+      </main >
+
+    {/* FOOTER */ }
+    < footer >
+    FOOTER
+      </footer >
     </>
   )
 }
