@@ -1,7 +1,7 @@
 export default function AppFooter() {
     return (
         <footer>
-            FOOTER
+            Footer
         </footer>
     )
 }
