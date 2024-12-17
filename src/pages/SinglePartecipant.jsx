@@ -5,14 +5,14 @@ import visitatori from '../database/visitatori.js'
 // import { useParams } from 'react-router-dom'
 
 
-export default function SinglePartecipant({id}) {
+export default function SinglePartecipant({ id }) {
 
     // 📌 prendere id del partecipante
     // const {id} = useParams()
 
 
     //confronta id nei parametri con id partecipanti
-    function getPartecipant(partecipant_id){
+    function getPartecipant(partecipant_id) {
         const tripClient = visitatori.find(element => element.id.toLowerCase() === partecipant_id.toLowerCase());
         return tripClient
     }
@@ -20,16 +20,16 @@ export default function SinglePartecipant({id}) {
 
     console.log(getPartecipant(id));
 
-    const {nome, cognome, email, numeroTelefonico} = getPartecipant(id)
-    
+    const { nome, cognome, email, numeroTelefonico } = getPartecipant(id)
+
 
     // OffCanvas ?
 
     return (
-            <div style={{position: 'absolute', top:'50%', left:'50%'}}>
-                <h2>{nome} {cognome}</h2>
-                <h3>Email: {email}</h3>
-                <h3>N° Telefono: {numeroTelefonico}</h3>
-            </div>
+        <div style={{ position: 'absolute', top: '50%', left: '50%' }}>
+            <h2>{nome} {cognome}</h2>
+            <h3>Email: {email}</h3>
+            <h3>N° Telefono: {numeroTelefonico}</h3>
+        </div>
     )
 }
