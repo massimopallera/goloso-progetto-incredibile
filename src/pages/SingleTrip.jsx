@@ -7,7 +7,6 @@ export default function SingleTrip() {
     const navigate = useNavigate()
 
     return (
-
         <>
             <div className="d-flex justify-content-center mt-5 mb-5">
                 <NavLink to='/' button className="btn btn-primary">Torna ai Viaggi</NavLink>
