@@ -1,9 +1,6 @@
-
-
 export default function SingleTrip() {
 
     return (
-
         <>
             <button className="btn btn-primary">Torna ai Viaggi</button>
             <div className="card">
