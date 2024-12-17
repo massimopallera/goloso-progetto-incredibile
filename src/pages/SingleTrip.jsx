@@ -1,9 +1,10 @@
 import visitatori from "../database/visitatori"
 import { useNavigate } from "react-router-dom"
 import { NavLink } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 export default function SingleTrip() {
-
+    const { id } = useParams()
     const navigate = useNavigate()
 
     return (
