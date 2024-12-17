@@ -7,8 +7,8 @@ export default function CardTour() {
                 <div key={viaggio.id} className="card-lg text-left ">
                     <div className="card-body rounded-4 ">
                         <div><strong>{viaggio.nome}</strong></div>
-                        <div>{viaggio.dataPartenza}</div>
-                        <div>{viaggio.dataRitorno}</div>
+                        <div> <strong>Partenza :</strong> {viaggio.dataPartenza}</div>
+                        <div> <strong>Ritorno :</strong> {viaggio.dataRitorno}</div>
                         <button
                             className='btn btn-primary btn-sm bg-primary rounded-4 text-white'>
                             <strong>Show Travel</strong>
