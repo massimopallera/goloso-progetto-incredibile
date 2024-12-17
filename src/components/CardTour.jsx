@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom"
 import viaggi from "../database/viaggi"
+
 
 export default function CardTour() {
     return (
@@ -9,10 +11,12 @@ export default function CardTour() {
                         <div><strong>{viaggio.nome}</strong></div>
                         <div> <strong>Partenza :</strong> {viaggio.dataPartenza}</div>
                         <div> <strong>Ritorno :</strong> {viaggio.dataRitorno}</div>
-                        <button
-                            className='btn btn-primary btn-sm bg-primary rounded-4 text-white'>
-                            <strong>Show Travel</strong>
-                        </button>
+                        <Link to={'/trips/id'}>
+                            <button
+                                className='btn btn-primary btn-sm bg-primary rounded-4 text-white'>
+                                Show Trips
+                            </button>
+                        </Link>
                     </div>
                 </div>
             )}
