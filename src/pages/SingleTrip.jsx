@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 export default function SingleTrip() {
@@ -14,11 +13,5 @@ export default function SingleTrip() {
             </div>
         </>
 
-=======
-export default function SingleTrip() {
-
-    return (
-        <></>
->>>>>>> 3aef5cbe84a72c4beb719012a37037365357cbc6
     )
 }
