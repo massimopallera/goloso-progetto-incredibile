@@ -8,22 +8,30 @@ import visitatori from '../database/visitatori.js'
 export default function SinglePartecipant() {
 
     // 📌 prendere id del partecipante
-    // const {id} = useParams()
+    const {id} = useParams()
 
 
-    //confrontare id del partecipante all'interno di visitatore
-    function getPartecipant(id){
-        const tripClient = visitatori.find(element => element.id === id);
+    //confronta id nei parametri con id partecipanti
+    function getPartecipant(partecipant_id){
+        const tripClient = visitatori.find(element => element.id.toLowerCase() === partecipant_id.toLowerCase());
         return tripClient
     }
 
 
-    console.log(getPartecipant("V001_1"));
+    console.log(getPartecipant(id));
+
+    const {nome, cognome, email, numeroTelefonico} = getPartecipant(id)
     
 
-    return (
-        <>
+    // OffCanvas ?
 
-        </>
+    return (
+        <div className='show-partecipant'>
+            <div className=''>
+                <h2>{nome} {cognome}</h2>
+                <h3>Email: {email}</h3>
+                <h3>N° Telefono: {numeroTelefonico}</h3>
+            </div>
+        </div>
     )
 }
