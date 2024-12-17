@@ -16,8 +16,8 @@ function App() {
 
           <Route element={<AppLayout />}>
             <Route index element={<HomePage />}></Route>
-            <Route path='/trips' element={<SingleTrip />}></Route>
-            <Route path='/clients' element={<SinglePartecipant />}></Route>
+            <Route path='/trips/:id' element={<SingleTrip />}></Route>
+            <Route path='/clients/:id' element={<SinglePartecipant />}></Route>
           </Route>
 
         </Routes>
