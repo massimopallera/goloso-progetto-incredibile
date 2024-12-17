@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* scrollbar */
+.table {
+  max-height: 525px;
+  overflow-y: auto;
+
+}
+
+.table::-webkit-scrollbar {
+  width: 7px;
+  /* Larghezza della scrollbar */
+}
+
+.table::-webkit-scrollbar-thumb {
+  background-color: #03ff81;
+  /* Colore della scrollbar */
+  border-radius: 10px;
+  /* Arrotondamento */
+}
+
+.table::-webkit-scrollbar-track {
+  background-color: #343a40;
+  /* Sfondo del tracciato */
+  border-radius: 10px;
+}
