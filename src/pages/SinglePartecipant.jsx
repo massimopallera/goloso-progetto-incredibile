@@ -1,14 +1,14 @@
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 import visitatori from '../database/visitatori.js'
 
 // Dare parametri alle rotte --> in questo caso nella rotta dovra` esserci l'id del partecipante
 // import { useParams } from 'react-router-dom'
 
 
-export default function SinglePartecipant() {
+export default function SinglePartecipant({id}) {
 
     // 📌 prendere id del partecipante
-    const {id} = useParams()
+    // const {id} = useParams()
 
 
     //confronta id nei parametri con id partecipanti
@@ -26,12 +26,10 @@ export default function SinglePartecipant() {
     // OffCanvas ?
 
     return (
-        <div className='show-partecipant'>
-            <div className=''>
+            <div style={{position: 'absolute', top:'50%', left:'50%'}}>
                 <h2>{nome} {cognome}</h2>
                 <h3>Email: {email}</h3>
                 <h3>N° Telefono: {numeroTelefonico}</h3>
             </div>
-        </div>
     )
 }
