@@ -8,8 +8,6 @@ export default function AppHeader() {
                     <i className="bi bi-layout-sidebar"></i>
                 </div>
                 <NavLink className="nav-link" aria-disabled="false" to="/">Home</NavLink>
-                <NavLink className="nav-link" aria-disabled="false" to="/trips">Viaggi</NavLink>
-                <NavLink className="nav-link" aria-disabled="false" to="/clients">Partecipanti</NavLink>
             </div>
         </header>
     )
