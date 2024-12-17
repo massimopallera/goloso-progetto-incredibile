@@ -15,9 +15,3 @@
 header {
     height: 80px;
 }
-
-.close-button:onclick {
-    #overlay {
-        display: none;
-    }
-}
