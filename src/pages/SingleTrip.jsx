@@ -48,9 +48,9 @@ export default function SingleTrip() {
 
     return (
         <>
-            <div className="d-flex justify-content-center mt-5 mb-5">
+            <div className="d-flex justify-content-center mt-5 mb-5 flex-column container align-items-center">
                 <NavLink to='/'>
-                    <button className="btn btn-primary">Torna ai Viaggi</button>
+                    <button className="btn btn-primary mb-4">Torna ai Viaggi</button>
                 </NavLink>
 
                 {/* search bar */}
