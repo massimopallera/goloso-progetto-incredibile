@@ -1,10 +1,3 @@
-// import { useParams } from 'react-router-dom'
-import visitatori from '../database/visitatori.js'
-
-// Dare parametri alle rotte --> in questo caso nella rotta dovra` esserci l'id del partecipante
-// import { useParams } from 'react-router-dom'
-
-
 export default function SinglePartecipant({ client, closeOverlay }) {
 
     return (
@@ -23,7 +16,7 @@ export default function SinglePartecipant({ client, closeOverlay }) {
             </div>
 
             <div className="phone mb-2">
-                <span className='text-muted'>phone:</span> <span className='pointer'>{client.numeroTelefono}</span>
+                <span className='text-muted'>Phone:</span> <span className='pointer'>{client.numeroTelefono}</span>
             </div>
 
             <button onClick={closeOverlay} className="btn btn-sm btn-outline-secondary ">Back</button>
