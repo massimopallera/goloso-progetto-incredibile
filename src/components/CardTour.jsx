@@ -7,16 +7,19 @@ export default function CardTour({ filteredTrips }) {
 
             {filteredTrips.map((viaggio) =>
                 <div key={viaggio.id} className="card text-left ">
-                    <div className="card-body rounded-4 ">
-                        <h5 className="card-title">{viaggio.nome}</h5>
+                    <div className="card-body d-flex justify-content-between rounded-4">
+                        <div className="details">
+                            <h5 className="card-title mb-2">{viaggio.nome}</h5>
 
-                        <div className="start">
-                            <span className="text-muted">Departure:</span> <span>{viaggio.dataPartenza}</span>
+                            <div className="start">
+                                <span className="text-muted">Departure:</span> <span>{viaggio.dataPartenza}</span>
+                            </div>
+
+                            <div className="end">
+                                <span className="text-muted">Return:</span> <span>{viaggio.dataRitorno}</span>
+                            </div>
                         </div>
 
-                        <div className="end mb-2">
-                            <span className="text-muted">Return:</span> <span>{viaggio.dataRitorno}</span>
-                        </div>
 
                         <Link to={`/trips/${viaggio.id}`}>
                             <button
