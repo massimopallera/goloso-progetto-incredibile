@@ -12,8 +12,8 @@ export default function HomePage() {
     }, [search])
 
     return (
-        <section className='container-lg mt-3 '>
-            <div className='bg-dark p-2 d-flex flex-column gap-2 rounded-4 table p-3'>
+        <section className='container-lg '>
+            <div className='bg-dark mb-0 d-flex flex-column gap-2 rounded-4 table p-3 pt-5'>
 
                 {/* search bar */}
                 <div className="searchBar">

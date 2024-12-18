@@ -47,14 +47,11 @@ export default function SingleTrip() {
     }
 
     return (
-        <>
-            <div className="d-flex justify-content-center mt-5 mb-5">
-                <NavLink to='/'>
-                    <button className="btn btn-primary">Torna ai Viaggi</button>
-                </NavLink>
+        <div className="bg-dark">
+            <div className="d-flex justify-content-center mb-1 align-items-center flex-column ">
 
                 {/* search bar */}
-                <div className="searchBar">
+                <div className="searchBar mt-4">
                     <form className="d-flex mb-3" role="search">
                         <input
                             className="form-control rounded-4"
@@ -66,6 +63,9 @@ export default function SingleTrip() {
                         />
                     </form>
                 </div>
+
+
+
             </div>
 
             {/* overlay */}
@@ -74,12 +74,12 @@ export default function SingleTrip() {
             </div>
 
             {/* clients */}
-            <div className="container-md">
-                <div className="row row-cols-1 gap-3 justify-content-center m-3">
+            <div className="container">
+                <div className="row row-cols-1 gap-3 justify-content-center m-3 ">
 
                     {filteredPartecipant.map(visitatore => (
                         <div className="col" key={visitatore.id}>
-                            <div className="card">
+                            <div className="card border-primary">
                                 <div
                                     className="card-body d-flex align-items-center justify-content-between"
                                     style={{ height: '75px', verticalAlign: 'middle' }}
@@ -103,6 +103,12 @@ export default function SingleTrip() {
 
                 </div>
             </div>
-        </>
+            <div className="container d-flex justify-content-center">
+                <NavLink to='/'>
+                    <button className="btn btn-primary btn-sm mb-4 ">Torna ai Viaggi</button>
+                </NavLink>
+            </div>
+
+        </div>
     )
 }

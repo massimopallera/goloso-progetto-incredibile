@@ -7,7 +7,7 @@ export default function AppLayout() {
         <>
             <AppHeader />
 
-            <main className="main">
+            <main className="main bg-dark">
                 <Outlet />
             </main>
 
