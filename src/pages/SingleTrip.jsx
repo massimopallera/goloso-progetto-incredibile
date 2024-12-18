@@ -15,11 +15,12 @@ const initial = {
 
 export default function SingleTrip() {
     const { id } = useParams()
+    const [client, setClient] = useState(initial)
+
     // const navigate = useNavigate()
 
-
-
-    const [client, setClient] = useState(initial)
+    // filtred client
+    const filtredClient = visitatori.filter(element => element.codiceViaggio.toLowerCase() === id.toLowerCase());
 
     function handleOverlay(id) {
         const overlayEl = document.querySelector('#overlay')
@@ -31,7 +32,6 @@ export default function SingleTrip() {
         setClient(findClient)
 
     }
-
 
     function closeOverlay() {
 
@@ -47,28 +47,28 @@ export default function SingleTrip() {
                 </NavLink>
             </div>
 
-            <div className="">
-
-                <div id='overlay' className="d-none">
-                    <div className="singleClient cardOverlay"
-                        style=
-                        {{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%,-50%)'
-                        }}>
-                        <h2> <strong>{client.nome} </strong> <strong>{client.cognome}</strong></h2>
-                        <h3>Email: {client.email}</h3>
-                        <h3>N° Telefono: {client.numeroTelefono}</h3>
-                        <button onClick={closeOverlay} className="btn btn-dark ">Indietro</button>
-                    </div>
+            {/* overlay */}
+            <div id='overlay' className="d-none">
+                <div className="singleClient cardOverlay"
+                    style=
+                    {{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%,-50%)'
+                    }}>
+                    <h2> <strong>{client.nome} </strong> <strong>{client.cognome}</strong></h2>
+                    <h3>Email: {client.email}</h3>
+                    <h3>N° Telefono: {client.numeroTelefono}</h3>
+                    <button onClick={closeOverlay} className="btn btn-dark ">Indietro</button>
                 </div>
-            </div >
+            </div>
 
+            {/* clients */}
             <div className="container">
                 <div className="row row-cols-1 row-cols-sm-3 row-cols-md-5 flex-wrap gap-3 justify-content-center m-3">
-                    {visitatori.map(visitatore => (
+
+                    {filtredClient.map(visitatore => (
                         <div className="card col g-2 p-3 d-flex align-middle justify-content-between bg-secondary text-white" key={visitatore.id}>
                             <h4 className="text-center ">{visitatore.nome} {visitatore.cognome}</h4>
                             <div className="d-flex justify-content-center">
@@ -79,8 +79,6 @@ export default function SingleTrip() {
 
                 </div>
             </div>
-
         </>
-
     )
 }
