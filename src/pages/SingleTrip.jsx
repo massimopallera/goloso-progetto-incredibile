@@ -3,7 +3,7 @@ import visitatori from "../database/visitatori"
 import { NavLink } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import SinglePartecipant from "./SinglePartecipant"
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "bootstrap"
 
 const initial = {
@@ -17,12 +17,12 @@ export default function SingleTrip() {
     const { id } = useParams()
     const [client, setClient] = useState(initial)
 
-    const [search, setSearch]  =useState('')
-    const [filteredPartecipant, setFilteredPartecipant] =useState(visitatori.filter(client => (client.id.toLowerCase() === client.id.toLowerCase())))
+    const [search, setSearch] = useState('')
+    const [filteredPartecipant, setFilteredPartecipant] = useState(visitatori.filter(client => (client.id.toLowerCase() === client.id.toLowerCase())))
 
     useEffect(() => {
         setFilteredPartecipant(visitatori.filter(visitatore => visitatore.nome.toLowerCase().includes(search.toLowerCase()) || visitatore.cognome.toLowerCase().includes(search.toLowerCase())))
-    },[search])
+    }, [search])
 
     // const navigate = useNavigate()
 
