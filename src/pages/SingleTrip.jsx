@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 import SinglePartecipant from "./SinglePartecipant"
 import { useState, useEffect } from "react"
 import { Button } from "bootstrap"
+import SearchBar from "../components/SearchBar"
 
 const initial = {
     nome: '',
@@ -48,21 +49,10 @@ export default function SingleTrip() {
 
     return (
         <div className="bg-dark">
-            <div className="d-flex justify-content-center mb-1 align-items-center flex-column ">
+            <div className="d-flex justify-content-center mb-1 align-items-center  ">
 
                 {/* search bar */}
-                <div className="searchBar mt-4">
-                    <form className="d-flex mb-3" role="search">
-                        <input
-                            className="form-control rounded-4"
-                            type="search"
-                            placeholder="Cerca partecipante"
-                            aria-label="Search"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                        />
-                    </form>
-                </div>
+                <SearchBar setSearch={setSearch} search={search} />
 
             </div>
 

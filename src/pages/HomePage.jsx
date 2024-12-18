@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CardTour from "../components/CardTour.jsx";
 import viaggi from "../database/viaggi.js";
+import SearchBar from "../components/SearchBar.jsx";
 
 export default function HomePage() {
 
@@ -12,22 +13,11 @@ export default function HomePage() {
     }, [search])
 
     return (
-        <section className='container-lg '>
-            <div className='bg-dark mb-0 d-flex flex-column gap-2 rounded-4 table p-3 pt-5'>
+        <section className='container '>
+            <div className='bg-dark p-2 d-flex flex-column gap-2 rounded-4 table p-3'>
 
                 {/* search bar */}
-                <div className="searchBar">
-                    <form className="d-flex mb-3" role="search">
-                        <input
-                            className="form-control rounded-4"
-                            type="search"
-                            placeholder="Cerca Il Viaggio"
-                            aria-label="Search"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                        />
-                    </form>
-                </div>
+                <SearchBar setSearch={setSearch} search={search} />
 
                 {/* card per i viaggi */}
                 <CardTour filteredTrips={filteredTrips} />
