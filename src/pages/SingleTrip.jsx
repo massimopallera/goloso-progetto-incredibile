@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import { NavLink } from "react-router-dom"
 import visitatori from "../database/visitatori"
+// import { useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import SinglePartecipant from "./SinglePartecipant"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "bootstrap"
 
 const initial = {
@@ -17,10 +17,17 @@ export default function SingleTrip() {
     const { id } = useParams()
     const [client, setClient] = useState(initial)
 
+    const filteredClient = visitatori.filter(element => element.codiceViaggio.toLowerCase() === id.toLowerCase());
+    const [search, setSearch] = useState('')
+    const [filteredPartecipant, setFilteredPartecipant] = useState(filteredClient)
+
+    useEffect(() => {
+        setFilteredPartecipant(filteredClient.filter(visitatore => visitatore.nome.toLowerCase().includes(search.toLowerCase()) || visitatore.cognome.toLowerCase().includes(search.toLowerCase())))
+    }, [search])
+
     // const navigate = useNavigate()
 
     // filtred client
-    const filtredClient = visitatori.filter(element => element.codiceViaggio.toLowerCase() === id.toLowerCase());
 
     function handleOverlay(id) {
         const overlayEl = document.querySelector('#overlay')
@@ -34,15 +41,16 @@ export default function SingleTrip() {
     }
 
     function closeOverlay() {
+
         const overlayEl = document.querySelector('#overlay')
         overlayEl.classList.add('d-none')
     }
 
     return (
         <>
-            <div className="d-flex justify-content-center mt-5 mb-5 flex-column container align-items-center">
+            <div className="d-flex justify-content-center mt-5 mb-5">
                 <NavLink to='/'>
-                    <button className="btn btn-primary mb-4">Torna ai Viaggi</button>
+                    <button className="btn btn-primary">Torna ai Viaggi</button>
                 </NavLink>
 
                 {/* search bar */}
@@ -66,16 +74,31 @@ export default function SingleTrip() {
             </div>
 
             {/* clients */}
-            <div className="container">
-                <div className="row row-cols-1 row-cols-md-2 justify-content-center gap-3">
+            <div className="container-md">
+                <div className="row row-cols-1 gap-3 justify-content-center m-3">
 
-                    {filtredClient.map(visitatore => (
-                        <div className="card col g-2 p-3 d-flex align-middle justify-content-between bg-secondary text-white" key={visitatore.id}>
-                            <h4 className="text-center ">{visitatore.nome} {visitatore.cognome}</h4>
-                            <div className="d-flex justify-content-center">
-                                <button onClick={() => (handleOverlay(visitatore.id))} className="btn btn-primary btn-sm mb-3"> Altre info</button>
+                    {filteredPartecipant.map(visitatore => (
+                        <div className="col" key={visitatore.id}>
+                            <div className="card">
+                                <div
+                                    className="card-body d-flex align-items-center justify-content-between"
+                                    style={{ height: '75px', verticalAlign: 'middle' }}
+                                >
+                                    <div>
+                                        <h5 className="card-title">{visitatore.nome} {visitatore.cognome}</h5>
+                                    </div>
+                                    <div>
+                                        <button
+                                            onClick={() => handleOverlay(visitatore.id)}
+                                            className="btn btn-outline-secondary btn-sm rounded-3 mb-3"
+                                        >
+                                            Altre info
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     ))}
 
                 </div>
