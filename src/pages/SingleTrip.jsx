@@ -49,19 +49,7 @@ export default function SingleTrip() {
 
             {/* overlay */}
             <div id='overlay' className="d-none">
-                <div className="singleClient cardOverlay"
-                    style=
-                    {{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%,-50%)'
-                    }}>
-                    <h2> <strong>{client.nome} </strong> <strong>{client.cognome}</strong></h2>
-                    <h3>Email: {client.email}</h3>
-                    <h3>N° Telefono: {client.numeroTelefono}</h3>
-                    <button onClick={closeOverlay} className="btn btn-dark ">Indietro</button>
-                </div>
+                <SinglePartecipant client={client} closeOverlay={closeOverlay} />
             </div>
 
             {/* clients */}

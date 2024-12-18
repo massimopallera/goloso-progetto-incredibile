@@ -5,31 +5,28 @@ import visitatori from '../database/visitatori.js'
 // import { useParams } from 'react-router-dom'
 
 
-export default function SinglePartecipant({ id }) {
-
-    // 📌 prendere id del partecipante
-    // const {id} = useParams()
-
-
-    //confronta id nei parametri con id partecipanti
-    function getPartecipant(partecipant_id) {
-        const tripClient = visitatori.find(element => element.id.toLowerCase() === partecipant_id.toLowerCase());
-        return tripClient
-    }
-
-
-    console.log(getPartecipant(id));
-
-    const { nome, cognome, email, numeroTelefonico } = getPartecipant(id)
-
-
-    // OffCanvas ?
+export default function SinglePartecipant({ client, closeOverlay }) {
 
     return (
-        <div style={{ position: 'absolute', top: '50%', left: '50%' }}>
-            <h2>{nome} {cognome}</h2>
-            <h3>Email: {email}</h3>
-            <h3>N° Telefono: {numeroTelefonico}</h3>
+        <div className="singleClient cardOverlay card"
+            style=
+            {{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%,-50%)'
+            }}>
+            <h3 className="card-title"> <strong>{client.nome} </strong> <strong>{client.cognome}</strong></h3>
+
+            <div className="email mb-1">
+                <span className="text-muted">Email:</span> <span className='pointer'>{client.email}</span>
+            </div>
+
+            <div className="phone mb-2">
+                <span className='text-muted'>N° Telefono:</span> <span className='pointer'>{client.numeroTelefono}</span>
+            </div>
+
+            <button onClick={closeOverlay} className="btn btn-dark ">Indietro</button>
         </div>
     )
 }

@@ -1,11 +1,9 @@
 .btn {
     width: 100px;
-    ;
 }
 
 .row {
     flex-wrap: wrap;
-
 }
 
 .main {
@@ -14,4 +12,5 @@
 
 header {
     height: 80px;
+    display: flex;
 }
