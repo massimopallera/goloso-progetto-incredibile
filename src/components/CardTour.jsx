@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom"
-import viaggi from "../database/viaggi"
-
-
 
 export default function CardTour({ filteredTrips }) {
-
-
 
     return (
         <div className="container table d-flex flex-column gap-2 ">
@@ -25,7 +20,7 @@ export default function CardTour({ filteredTrips }) {
 
                         <Link to={`/trips/${viaggio.id}`}>
                             <button
-                                className='btn btn-outline-secondary btn-sm rounded-4'>
+                                className='btn btn-outline-secondary btn-sm rounded-3'>
                                 Trip details
                             </button>
                         </Link>

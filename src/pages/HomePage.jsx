@@ -4,12 +4,12 @@ import viaggi from "../database/viaggi.js";
 
 export default function HomePage() {
 
-    const [search, setSearch]  =useState('')
-    const [filteredTrips, setFilteredTrips] =useState(viaggi)
+    const [search, setSearch] = useState('')
+    const [filteredTrips, setFilteredTrips] = useState(viaggi)
 
     useEffect(() => {
         setFilteredTrips(viaggi.filter(trip => trip.nome.toLowerCase().includes(search.toLowerCase())))
-    },[search])
+    }, [search])
 
     return (
         <section className='container-lg mt-3 '>
@@ -30,7 +30,7 @@ export default function HomePage() {
                 </div>
 
                 {/* card per i viaggi */}
-                <CardTour filteredTrips={filteredTrips}/>
+                <CardTour filteredTrips={filteredTrips} />
 
             </div>
         </section>
