@@ -17,7 +17,7 @@ export default function HomePage() {
             <div className='bg-dark p-2 d-flex flex-column gap-2 rounded-4 table p-3 mb-0'>
 
                 {/* search bar */}
-                <SearchBar setSearch={setSearch} search={search} placeholder={'Cerca il viaggio'} />
+                <SearchBar setSearch={setSearch} search={search} placeholder={'Search a trip...'} />
 
                 {/* card per i viaggi */}
                 <CardTour filteredTrips={filteredTrips} />

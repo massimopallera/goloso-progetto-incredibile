@@ -46,14 +46,6 @@
   }
 }
 
-/* Stile per il NavLink attivo */
-.nav-link.active {
-  border-bottom: 2px solid rgb(0, 128, 255);
-  color: white;
-  text-decoration: none;
-}
-
-
 .table {
 
   h5 {

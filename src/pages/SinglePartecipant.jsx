@@ -23,10 +23,10 @@ export default function SinglePartecipant({ client, closeOverlay }) {
             </div>
 
             <div className="phone mb-2">
-                <span className='text-muted'>N° Telefono:</span> <span className='pointer'>{client.numeroTelefono}</span>
+                <span className='text-muted'>phone:</span> <span className='pointer'>{client.numeroTelefono}</span>
             </div>
 
-            <button onClick={closeOverlay} className="btn btn-dark ">Indietro</button>
+            <button onClick={closeOverlay} className="btn btn-sm btn-outline-secondary ">Back</button>
         </div>
     )
 }

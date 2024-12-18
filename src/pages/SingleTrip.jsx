@@ -52,7 +52,7 @@ export default function SingleTrip() {
             <div className="bg-dark p-2 d-flex flex-column gap-2 rounded-4 table p-3 mb-0 ">
 
                 {/* search bar */}
-                <SearchBar setSearch={setSearch} search={search} placeholder={'Inserisci il nome'} />
+                <SearchBar setSearch={setSearch} search={search} placeholder={'Search name...'} />
 
             </div>
 
@@ -62,8 +62,8 @@ export default function SingleTrip() {
             </div>
 
             {/* clients */}
-            <div className="container-custum">
-                <div className="row row-cols-1 gap-3 justify-content-center m-3">
+            <div className="container">
+                <div className="row row-cols-1 row-cols-md-2 gap-3 justify-content-center m-3">
 
                     {filteredPartecipant.map(visitatore => (
                         <div className="col" key={visitatore.id}>
@@ -80,7 +80,7 @@ export default function SingleTrip() {
                                             onClick={() => handleOverlay(visitatore.id)}
                                             className="btn btn-outline-secondary btn-sm rounded-3"
                                         >
-                                            Altre info
+                                            More info
                                         </button>
                                     </div>
                                 </div>
@@ -95,10 +95,13 @@ export default function SingleTrip() {
             {/* back to home */}
             <div className="container d-flex justify-content-center">
                 <NavLink to='/'>
-                    <button className="btn btn-primary btn-sm mb-4 ">Torna ai Viaggi</button>
+                    <button
+                        className="btn btn-secondary btn-sm mb-4"
+                        style={{ fontSize: '12px', padding: "7px" }}
+                    >Back to trips</button>
                 </NavLink>
             </div>
 
-        </div>
+        </div >
     )
 }

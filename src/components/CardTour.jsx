@@ -11,11 +11,11 @@ export default function CardTour({ filteredTrips }) {
                         <h5 className="card-title">{viaggio.nome}</h5>
 
                         <div className="start">
-                            <span className="text-muted">Partenza :</span> <span>{viaggio.dataPartenza}</span>
+                            <span className="text-muted">Departure:</span> <span>{viaggio.dataPartenza}</span>
                         </div>
 
                         <div className="end mb-2">
-                            <span className="text-muted">Ritorno :</span> <span>{viaggio.dataRitorno}</span>
+                            <span className="text-muted">Return:</span> <span>{viaggio.dataRitorno}</span>
                         </div>
 
                         <Link to={`/trips/${viaggio.id}`}>
