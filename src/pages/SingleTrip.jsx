@@ -17,17 +17,17 @@ export default function SingleTrip() {
     const { id } = useParams()
     const [client, setClient] = useState(initial)
 
+    const filteredClient = visitatori.filter(element => element.codiceViaggio.toLowerCase() === id.toLowerCase());
     const [search, setSearch]  =useState('')
-    const [filteredPartecipant, setFilteredPartecipant] =useState(visitatori.filter(client => (client.id.toLowerCase() === client.id.toLowerCase())))
-
+    const [filteredPartecipant, setFilteredPartecipant] =useState(filteredClient)
+    
     useEffect(() => {
-        setFilteredPartecipant(visitatori.filter(visitatore => visitatore.nome.toLowerCase().includes(search.toLowerCase()) || visitatore.cognome.toLowerCase().includes(search.toLowerCase())))
+        setFilteredPartecipant(filteredClient.filter(visitatore => visitatore.nome.toLowerCase().includes(search.toLowerCase()) || visitatore.cognome.toLowerCase().includes(search.toLowerCase())))
     },[search])
 
     // const navigate = useNavigate()
 
     // filtred client
-    // const filteredClient = visitatori.filter(element => element.codiceViaggio.toLowerCase() === id.toLowerCase());
 
     function handleOverlay(id) {
         const overlayEl = document.querySelector('#overlay')
