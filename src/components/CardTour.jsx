@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export default function CardTour({ filteredTrips }) {
 
     return (
-        <div className="container table d-flex flex-column gap-2 ">
+        <div className="container table d-flex flex-column gap-3 ">
 
             {filteredTrips.map((viaggio) =>
                 <div key={viaggio.id} className="card text-left ">
