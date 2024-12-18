@@ -49,10 +49,10 @@ export default function SingleTrip() {
 
     return (
         <div className="bg-dark">
-            <div className="d-flex justify-content-center mb-1 align-items-center  ">
+            <div className="bg-dark p-2 d-flex flex-column gap-2 rounded-4 table p-3 mb-0 ">
 
                 {/* search bar */}
-                <SearchBar setSearch={setSearch} search={search} />
+                <SearchBar setSearch={setSearch} search={search} placeholder={'Inserisci il nome'} />
 
             </div>
 

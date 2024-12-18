@@ -14,10 +14,10 @@ export default function HomePage() {
 
     return (
         <section className='container '>
-            <div className='bg-dark p-2 d-flex flex-column gap-2 rounded-4 table p-3'>
+            <div className='bg-dark p-2 d-flex flex-column gap-2 rounded-4 table p-3 mb-0'>
 
                 {/* search bar */}
-                <SearchBar setSearch={setSearch} search={search} />
+                <SearchBar setSearch={setSearch} search={search} placeholder={'Cerca il viaggio'} />
 
                 {/* card per i viaggi */}
                 <CardTour filteredTrips={filteredTrips} />
