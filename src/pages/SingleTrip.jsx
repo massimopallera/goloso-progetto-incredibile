@@ -64,8 +64,6 @@ export default function SingleTrip() {
                     </form>
                 </div>
 
-
-
             </div>
 
             {/* overlay */}
@@ -74,23 +72,23 @@ export default function SingleTrip() {
             </div>
 
             {/* clients */}
-            <div className="container">
-                <div className="row row-cols-1 gap-3 justify-content-center m-3 ">
+            <div className="container-custum">
+                <div className="row row-cols-1 gap-3 justify-content-center m-3">
 
                     {filteredPartecipant.map(visitatore => (
                         <div className="col" key={visitatore.id}>
-                            <div className="card border-primary">
+                            <div className="card">
                                 <div
-                                    className="card-body d-flex align-items-center justify-content-between"
-                                    style={{ height: '75px', verticalAlign: 'middle' }}
+                                    className="card-body d-flex justify-content-between align-items-center"
+                                    style={{ minHeight: '75px' }}
                                 >
                                     <div>
-                                        <h5 className="card-title">{visitatore.nome} {visitatore.cognome}</h5>
+                                        <h5 className="card-title mb-0">{visitatore.nome} {visitatore.cognome}</h5>
                                     </div>
                                     <div>
                                         <button
                                             onClick={() => handleOverlay(visitatore.id)}
-                                            className="btn btn-outline-secondary btn-sm rounded-3 mb-3"
+                                            className="btn btn-outline-secondary btn-sm rounded-3"
                                         >
                                             Altre info
                                         </button>
@@ -103,6 +101,8 @@ export default function SingleTrip() {
 
                 </div>
             </div>
+
+            {/* back to home */}
             <div className="container d-flex justify-content-center">
                 <NavLink to='/'>
                     <button className="btn btn-primary btn-sm mb-4 ">Torna ai Viaggi</button>
