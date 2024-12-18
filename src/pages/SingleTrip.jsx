@@ -3,7 +3,7 @@ import visitatori from "../database/visitatori"
 import { NavLink } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import SinglePartecipant from "./SinglePartecipant"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { Button } from "bootstrap"
 
 const initial = {
@@ -17,10 +17,17 @@ export default function SingleTrip() {
     const { id } = useParams()
     const [client, setClient] = useState(initial)
 
+    const [search, setSearch]  =useState('')
+    const [filteredPartecipant, setFilteredPartecipant] =useState(visitatori.filter(client => (client.id.toLowerCase() === client.id.toLowerCase())))
+
+    useEffect(() => {
+        setFilteredPartecipant(visitatori.filter(visitatore => visitatore.nome.toLowerCase().includes(search.toLowerCase()) || visitatore.cognome.toLowerCase().includes(search.toLowerCase())))
+    },[search])
+
     // const navigate = useNavigate()
 
     // filtred client
-    const filtredClient = visitatori.filter(element => element.codiceViaggio.toLowerCase() === id.toLowerCase());
+    // const filteredClient = visitatori.filter(element => element.codiceViaggio.toLowerCase() === id.toLowerCase());
 
     function handleOverlay(id) {
         const overlayEl = document.querySelector('#overlay')
@@ -45,6 +52,20 @@ export default function SingleTrip() {
                 <NavLink to='/'>
                     <button className="btn btn-primary">Torna ai Viaggi</button>
                 </NavLink>
+
+                {/* search bar */}
+                <div className="searchBar">
+                    <form className="d-flex mb-3" role="search">
+                        <input
+                            className="form-control rounded-4"
+                            type="search"
+                            placeholder="Cerca partecipante"
+                            aria-label="Search"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </form>
+                </div>
             </div>
 
             {/* overlay */}
@@ -56,7 +77,7 @@ export default function SingleTrip() {
             <div className="container">
                 <div className="row row-cols-1 row-cols-sm-3 row-cols-md-5 flex-wrap gap-3 justify-content-center m-3">
 
-                    {filtredClient.map(visitatore => (
+                    {filteredPartecipant.map(visitatore => (
                         <div className="card col g-2 p-3 d-flex align-middle justify-content-between bg-secondary text-white" key={visitatore.id}>
                             <h4 className="text-center ">{visitatore.nome} {visitatore.cognome}</h4>
                             <div className="d-flex justify-content-center">
