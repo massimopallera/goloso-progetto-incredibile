@@ -52,3 +52,16 @@
   color: white;
   text-decoration: none;
 }
+
+
+.table {
+
+  h5 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .start {
+    padding-bottom: 0;
+  }
+}

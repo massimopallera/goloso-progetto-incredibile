@@ -3,27 +3,36 @@ import viaggi from "../database/viaggi"
 
 
 
-export default function CardTour() {
+export default function CardTour({ filteredTrips }) {
 
 
 
     return (
         <div className="container table d-flex flex-column gap-2 ">
-            {viaggi.map((viaggio) =>
-                <div key={viaggio.id} className="card-lg text-left ">
+
+            {filteredTrips.map((viaggio) =>
+                <div key={viaggio.id} className="card text-left ">
                     <div className="card-body rounded-4 ">
-                        <div><strong>{viaggio.nome}</strong></div>
-                        <div> <strong>Partenza :</strong> {viaggio.dataPartenza}</div>
-                        <div> <strong>Ritorno :</strong> {viaggio.dataRitorno}</div>
+                        <h5 className="card-title">{viaggio.nome}</h5>
+
+                        <div className="start">
+                            <span className="text-muted">Partenza :</span> <span>{viaggio.dataPartenza}</span>
+                        </div>
+
+                        <div className="end mb-2">
+                            <span className="text-muted">Ritorno :</span> <span>{viaggio.dataRitorno}</span>
+                        </div>
+
                         <Link to={`/trips/${viaggio.id}`}>
                             <button
-                                className='btn btn-primary btn-sm bg-primary rounded-4 text-white'>
-                                Show Trips
+                                className='btn btn-outline-secondary btn-sm rounded-4'>
+                                Trip details
                             </button>
                         </Link>
                     </div>
                 </div>
             )}
+
         </div>
     )
 }
